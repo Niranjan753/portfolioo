@@ -34,6 +34,10 @@ export default function Home() {
     return () => clearInterval(typingIntervalId);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Navbar />
