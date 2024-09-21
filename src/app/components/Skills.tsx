@@ -28,16 +28,16 @@ export default function Skills() {
   const [showCursor, setShowCursor] = useState(true);
 
   const skills = [
-    { icon: faReact, text: "React" },
-    { icon: SiNextdotjs, text: "Next.js" },
-    { icon: SiTailwindcss, text: "Tailwind" },
-    { icon: faJs, text: "TypeScript" },
-    { icon: faNodeJs, text: "Node.js" },
-    { icon: SiRust, text: "Rust" },
-    { icon: faPython, text: "Python" },
-    { icon: faDatabase, text: "MongoDB" },
-    { icon: faDocker, text: "Docker" },
-    { icon: SiRedux, text: "Redux" },
+    { icon: faReact, text: "React", isFontAwesome: true },
+    { icon: SiNextdotjs, text: "Next.js", isFontAwesome: false },
+    { icon: SiTailwindcss, text: "Tailwind", isFontAwesome: false },
+    { icon: faJs, text: "TypeScript", isFontAwesome: true },
+    { icon: faNodeJs, text: "Node.js", isFontAwesome: true },
+    { icon: SiRust, text: "Rust", isFontAwesome: false },
+    { icon: faPython, text: "Python", isFontAwesome: true },
+    { icon: faDatabase, text: "MongoDB", isFontAwesome: true },
+    { icon: faDocker, text: "Docker", isFontAwesome: true },
+    { icon: SiRedux, text: "Redux", isFontAwesome: false },
   ];
 
   useEffect(() => {
@@ -78,6 +78,7 @@ export default function Skills() {
               key={index} 
               icon={skill.icon}
               text={skill.text} 
+              isFontAwesome={skill.isFontAwesome}
             />
           ))}
         </div>
@@ -143,13 +144,18 @@ export default function Skills() {
 interface SkillIconProps {
   icon: IconDefinition | IconType;
   text: string;
+  isFontAwesome: boolean;
 }
 
-function SkillIcon({ icon, text }: SkillIconProps) {
+function SkillIcon({ icon, text, isFontAwesome }: SkillIconProps) {
   return (
     <div className="flex items-center">
       <span className="mr-2">{'>'}</span>
-      {React.createElement(icon as IconType, { className: "w-6 h-6 mr-2" })}
+      {isFontAwesome ? (
+        <FontAwesomeIcon icon={icon as IconDefinition} className="w-6 h-6 mr-2" />
+      ) : (
+        React.createElement(icon as IconType, { className: "w-6 h-6 mr-2" })
+      )}
       <span>{text}</span>
     </div>
   );
