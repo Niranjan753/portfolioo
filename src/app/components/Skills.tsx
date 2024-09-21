@@ -16,7 +16,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { SiNextdotjs, SiRust, SiTailwindcss, SiRedux } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiRust, SiRedux } from 'react-icons/si';
 
 import { IconType } from 'react-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';

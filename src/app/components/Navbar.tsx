@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from 'next/navigation';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +65,7 @@ function NavLink({
   isActive,
 }: {
   href: string;
-  icon: any;
+  icon: IconDefinition;
   text: string;
   isActive: boolean;
 }) {

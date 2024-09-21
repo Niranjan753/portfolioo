@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import Skills from './components/Skills';
 import Navbar from './components/Navbar';
-
+import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 export default function Home() {
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -34,10 +34,6 @@ export default function Home() {
     return () => clearInterval(typingIntervalId);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Navbar />
@@ -46,7 +42,7 @@ export default function Home() {
         <div className="flex flex-col items-start space-y-8 w-full max-w-xl">
           <div className="text-left w-full">
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-8">
-              Hey, I'm<br />{text}
+              Hey, I&apos;m<br />{text}
               <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
             </h1>
             <div className="border-2 border-[#2ea44f] rounded-lg p-4 mb-4 w-full bg-[#0d1117] shadow-lg">
@@ -113,7 +109,7 @@ export default function Home() {
   );
 }
 
-function SocialLink({ href, icon }: { href: string; icon: any }) {
+function SocialLink({ href, icon }: { href: string; icon: IconDefinition }) {
   return (
     <a
       href={href}

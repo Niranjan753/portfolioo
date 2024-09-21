@@ -18,7 +18,7 @@ export default function About() {
               <Notepad />
         <p className="text-xl mt-8 text-center mx-2 md:mx-4 lg:mx-8 text-custom-green">
           Interested in collaborating on freelance projects or discussing related work opportunities?<br />
-          I'd love to hear from you! Feel free to reach out to me at{' '}
+          I&apos;d love to hear from you! Feel free to reach out to me at{' '}
           <a href="mailto:niranjanr753@gmail.com" className="text-custom-green-hover hover:underline">
             niranjanr753@gmail.com
           </a>
